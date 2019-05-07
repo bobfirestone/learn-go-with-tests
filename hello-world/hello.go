@@ -4,11 +4,16 @@ package hello
 
 import "fmt"
 
+const englishHelloPrefix = "Hello, "
+
 // Hello say hello
 func Hello(name string) string {
-	return "Hello, " + name
+	if name == "" {
+		name = "World"
+	}
+	return englishHelloPrefix + name
 }
 
 func main() {
-	fmt.Println(Hello("Nachos"))
+	fmt.Println(Hello(""))
 }
